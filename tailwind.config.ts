@@ -1,9 +1,10 @@
 import type { Config } from 'tailwindcss';
+import tailwindTypography from '@tailwindcss/typography';
 
 export default {
-  content: ['.vitepress/**/*.js', '.vitepress/**/*.vue', '.vitepress/**/*.ts'],
+  content: ['.vitepress/theme/**/*.vue'],
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [tailwindTypography],
 } satisfies Config;

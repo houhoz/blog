@@ -7,14 +7,16 @@ settings:
 importers:
 
   .:
-    dependencies:
-      vue:
-        specifier: ^3.5.12
-        version: 3.5.12
     devDependencies:
+      '@tailwindcss/typography':
+        specifier: ^0.5.15
+        version: 0.5.15(tailwindcss@3.4.13)
       autoprefixer:
         specifier: ^10.4.20
         version: 10.4.20(postcss@8.4.47)
+      colorjs.io:
+        specifier: ^0.5.2
+        version: 0.5.2
       postcss:
         specifier: ^8.4.47
         version: 8.4.47
@@ -24,6 +26,9 @@ importers:
       vitepress:
         specifier: ^1.4.0
         version: 1.4.0(@algolia/client-search@4.24.0)(postcss@8.4.47)(search-insights@2.17.2)
+      vue:
+        specifier: ^3.5.12
+        version: 3.5.12
 
 packages:
 
@@ -410,6 +415,11 @@ packages:
   '@shikijs/vscode-textmate@9.3.0':
     resolution: {integrity: sha512-jn7/7ky30idSkd/O5yDBfAnVt+JJpepofP/POZ1iMOxK59cOfqIgg/Dj0eFsjOTMw+4ycJN0uhZH/Eb0bs/EUA==}
 
+  '@tailwindcss/typography@0.5.15':
+    resolution: {integrity: sha512-AqhlCXl+8grUz8uqExv5OTtgpjuVIwFTSXTrh8y9/pw6q2ek7fJ+Y8ZEVw7EB2DCcuCOtEjf9w3+J3rzts01uA==}
+    peerDependencies:
+      tailwindcss: '>=3.0.0 || insiders || >=4.0.0-alpha.20'
+
   '@types/estree@1.0.6':
     resolution: {integrity: sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==}
 
@@ -617,6 +627,9 @@ packages:
   color-name@1.1.4:
     resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
 
+  colorjs.io@0.5.2:
+    resolution: {integrity: sha512-twmVoizEW7ylZSN32OgKdXRmo1qg+wT5/6C3xu5b9QsWzSFAhHLn2xd8ro0diCsKfCj1RdaTP/nrcW+vAoQPIw==}
+
   comma-separated-tokens@2.0.3:
     resolution: {integrity: sha512-Fu4hJdvzeylCfQPp9SGWidpzrMs7tTrlu6Vb8XGaRGck8QSNZJJp538Wrb60Lax4fPwR64ViY468OIUTbRlGZg==}
 
@@ -787,6 +800,15 @@ packages:
   lines-and-columns@1.2.4:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
 
+  lodash.castarray@4.4.0:
+    resolution: {integrity: sha512-aVx8ztPv7/2ULbArGJ2Y42bG1mEQ5mGjpdvrbJcJFU3TbYybe+QlLS4pst9zV52ymy2in1KpFPiZnAOATxD4+Q==}
+
+  lodash.isplainobject@4.0.6:
+    resolution: {integrity: sha512-oSXzaWypCMHkPC3NvBEaPHf0KsA5mvPrOPgQWDsbg8n7orZ290M0BmC/jgRZ4vcJ6DTAhjrsSYgdsW/F+MFOBA==}
+
+  lodash.merge@4.6.2:
+    resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
+
   lru-cache@10.4.3:
     resolution: {integrity: sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==}
 
@@ -927,6 +949,10 @@ packages:
     engines: {node: '>=12.0'}
     peerDependencies:
       postcss: ^8.2.14
+
+  postcss-selector-parser@6.0.10:
+    resolution: {integrity: sha512-IQ7TZdoaqbT+LCpShg46jnZVlhWD2w6iQYAcYXfHARZ7X1t/UGhhceQDs5X0cGqKvYlHNOuv7Oa1xmb0oQuA3w==}
+    engines: {node: '>=4'}
 
   postcss-selector-parser@6.1.2:
     resolution: {integrity: sha512-Q8qQfPiZ+THO/3ZrOrO0cJJKfpYCagtMUkXbnEfmgUjwXg6z/WBeOyS9APBBPCTSiDV+s4SwQGu8yFsiMRIudg==}
@@ -1515,6 +1541,14 @@ snapshots:
 
   '@shikijs/vscode-textmate@9.3.0': {}
 
+  '@tailwindcss/typography@0.5.15(tailwindcss@3.4.13)':
+    dependencies:
+      lodash.castarray: 4.4.0
+      lodash.isplainobject: 4.0.6
+      lodash.merge: 4.6.2
+      postcss-selector-parser: 6.0.10
+      tailwindcss: 3.4.13
+
   '@types/estree@1.0.6': {}
 
   '@types/hast@3.0.4':
@@ -1743,6 +1777,8 @@ snapshots:
 
   color-name@1.1.4: {}
 
+  colorjs.io@0.5.2: {}
+
   comma-separated-tokens@2.0.3: {}
 
   commander@4.1.1: {}
@@ -1922,6 +1958,12 @@ snapshots:
 
   lines-and-columns@1.2.4: {}
 
+  lodash.castarray@4.4.0: {}
+
+  lodash.isplainobject@4.0.6: {}
+
+  lodash.merge@4.6.2: {}
+
   lru-cache@10.4.3: {}
 
   magic-string@0.30.12:
@@ -2042,6 +2084,11 @@ snapshots:
     dependencies:
       postcss: 8.4.47
       postcss-selector-parser: 6.1.2
+
+  postcss-selector-parser@6.0.10:
+    dependencies:
+      cssesc: 3.0.0
+      util-deprecate: 1.0.2
 
   postcss-selector-parser@6.1.2:
     dependencies:

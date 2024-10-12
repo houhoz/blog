@@ -2,6 +2,7 @@
 import { computed } from 'vue';
 import { useData } from 'vitepress';
 import HomeLink from './components/HomeLink.vue';
+import PostTitle from './components/PostTitle.vue';
 import { data as posts } from './posts.data';
 
 // https://vitepress.dev/reference/runtime-api#usedata
@@ -36,26 +37,24 @@ console.log('posts', posts);
         :href="`/posts/${post.slug}.html`"
       >
         <article>
-          <h2
-            class="text-[28px] font-black text-[--lightLink] dark:text-[--darkLink]"
-          >
-            {{ post.title }}
-          </h2>
-          <p class="text-[13px] text-gray-700 dark:text-gray-300">
-            January 4, 2024
+          <PostTitle title="111111" date="2018-11-30" />
+          <p className="text-[13px] text-gray-700 dark:text-gray-300">
+            {{
+              new Date(2018 - 11 - 30).toLocaleDateString('en', {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric',
+              })
+            }}
           </p>
           <p class="mt-1">
             The limits of my language mean the limits of my world.
           </p>
-          <!-- <PostTitle post="{post}" />
-          <PostMeta post="{post}" />
-          <PostSubtitle post="{post}" /> -->
         </article>
       </a>
     </div>
   </div>
   <div v-else>
-    <a href="/">Home</a>
-    <Content />
+    <Content class="prose dark:prose-invert pt-10 pb-8" />
   </div>
 </template>
