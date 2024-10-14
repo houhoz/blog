@@ -32,24 +32,22 @@ console.log('posts', posts);
     <div className="relative -top-[10px] flex flex-col gap-8">
       <a
         v-for="post in posts"
-        key="{post.slug}"
+        :key="post.url"
         class="block py-4 hover:scale-[1.005]"
-        :href="`/posts/${post.slug}.html`"
+        :href="post.url"
       >
         <article>
-          <PostTitle title="111111" date="2018-11-30" />
+          <PostTitle :title="post.title" :date="post.date.time" />
           <p className="text-[13px] text-gray-700 dark:text-gray-300">
             {{
-              new Date(2018 - 11 - 30).toLocaleDateString('en', {
+              new Date(post.date.time).toLocaleDateString('en', {
                 day: 'numeric',
                 month: 'long',
                 year: 'numeric',
               })
             }}
           </p>
-          <p class="mt-1">
-            The limits of my language mean the limits of my world.
-          </p>
+          <p class="mt-1" v-html="post.excerpt"></p>
         </article>
       </a>
     </div>

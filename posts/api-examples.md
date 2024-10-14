@@ -1,7 +1,14 @@
 ---
 outline: deep
 title: Runtime API Examples
+date: 2022-07-27
 ---
+
+
+This page demonstrates usage of some of the runtime APIs provided by VitePress.
+---
+
+This page demonstrates usage of some of the runtime APIs provided by VitePress.
 
 # Runtime API Examples
 

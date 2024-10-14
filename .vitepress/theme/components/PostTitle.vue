@@ -4,7 +4,7 @@ import Color from 'colorjs.io';
 
 const props = defineProps<{
   title: string;
-  date: string;
+  date: number;
 }>();
 
 const staleness = computed(() => {
