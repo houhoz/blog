@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue';
+import { computed, onMounted } from 'vue';
 import { useData } from 'vitepress';
 import HomeLink from './components/HomeLink.vue';
 import PostTitle from './components/PostTitle.vue';
@@ -8,8 +8,10 @@ import { data as posts } from './posts.data';
 // https://vitepress.dev/reference/runtime-api#usedata
 const { site, frontmatter } = useData();
 
-document.body.className =
-  'mx-auto max-w-2xl bg-[--bg] px-5 py-12 text-[--text]';
+onMounted(() => {
+  document.body.className =
+    'mx-auto max-w-2xl bg-[--bg] px-5 py-12 text-[--text]';
+});
 
 console.log('posts', posts);
 </script>
